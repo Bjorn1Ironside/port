@@ -135,7 +135,7 @@ body{
 
 .menu-mobile {
     position: fixed;
-    height: 100vh;
+    height: calc(100vh - 68px);
     top: 68px;
     right: 0;
     backdrop-filter: blur(5px);
@@ -146,13 +146,28 @@ body{
     align-items: center;
     flex-direction: column;
     gap: 40px;
-    padding: 30px 70px;
+    padding: 0 70px;
 }
 
 .menu-mobile a {
     text-decoration: none;
     color: white;
     padding: 30px;
+}
+
+.animation-links {
+    animation: fadein .8s;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @media (max-width: 768px) {
